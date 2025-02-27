@@ -11,7 +11,7 @@ function actualizarListaAmigos(){
         const li = document.createElement('li');
         li.textContent = amigo;
         listaAmigos.appendChild(li);
-    });
+    });//recorre el array de amigos y crea un li para cada uno
 } 
 
 
@@ -29,3 +29,16 @@ function agregarAmigo(){
     actualizarListaAmigos();
 }
 
+function sortearAmigo(){
+    if (amigos.length === 0){
+        alert('La lista se encuentra vacia, no tienes amigos');
+        return;
+        
+    }
+
+    const indiceAleatorio = Math.floor(Math.random() * amigos.length);
+    const amigoSorteado = amigos[indiceAleatorio];
+
+    const resultado = document.getElementById('resultado');
+    resultado.innerHTML = `<li> El amigo secreto es: ${amigoSorteado}</li>`
+}
